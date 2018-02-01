@@ -1,8 +1,8 @@
-Author: Thibaut Seys
+Autheur : Thibaut Seys
 
-Date: 01/02/2018
+Date : 01/02/2018
 
-Lien github: https://github.com/SeysT/Optim-DM1
+Lien github : https://github.com/SeysT/Optim-DM1
 
 # Optimisation - Devoir-Maison 1 : Mots Croisés
 
