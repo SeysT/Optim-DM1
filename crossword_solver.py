@@ -14,6 +14,8 @@ if __name__ == '__main__':
     var = {('s', tuple(segment)): set(words[len(segment)]) for segment in segments}
     var.update({('c', tuple(case)): set(alphabet) for case in cases})
     p = constraint_programming(var)
+    if len(argv) > 3:
+        p.maintain_arc_consistency()
 
     print('Adding constraints...')
     for case in cases:
