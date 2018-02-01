@@ -1,4 +1,23 @@
+"""
+Author: Thibaut Seys
+Last modified: 01/02/2018
+
+Summary:
+This file defines all functions needed to modelize crosswords problem.
+"""
+
+
 def parse_grid(grid):
+    """
+    This function returns all segments and cases from a given grid.
+    + params:
+        - grid: the grid to parse. Expected input: ['###...##', ...]
+    + return:
+        - segments: a list of list containing coordinates tuples for one segment to complete:
+            [[(x, y), ...], ...]
+        - cases: a list of coordinates tuples for cases to complete:
+            [(x, y)]
+    """
     height = len(grid)
     width = len(grid[0])
 
@@ -32,6 +51,18 @@ def parse_grid(grid):
 
 
 def load_data_from_files(grid_filename, word_filename):
+    """
+    This function returns all data that could be extracted from files.
+    + params:
+        - grid_filename: the filename of the grid to parse
+        - word_filename: the filename of the vocabulary to use
+    + return:
+        - grid: the grid model represented as a list on line:
+            ['#####..####', ...]
+        - words: a dict representing of vocabulary. The keys are the length ofthe value words:
+            {len_worlds: [word, ...]}
+        - alphabet: a set representing the possible symbol encounter in word file.
+    """
     with open(grid_filename, 'r') as grid_file:
         grid = grid_file.read().strip().split('\n')
 
@@ -51,6 +82,9 @@ def load_data_from_files(grid_filename, word_filename):
 
 
 def pretty_print(grid, sol):
+    """
+    Tis function print the solved grid. It needs as inputs the grid model and the found solution.
+    """
     grid = [list(elt) for elt in grid]
     for key, value in sol.items():
         if key[0] == 'c':
